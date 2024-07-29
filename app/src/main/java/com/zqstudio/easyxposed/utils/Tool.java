@@ -3,6 +3,8 @@ package com.zqstudio.easyxposed.utils;
 import android.util.Log;
 
 import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XposedBridge;
+import de.robv.android.xposed.XposedHelpers;
 
 /**
  * CreateDate：2020/6/12 9:31
@@ -34,7 +36,8 @@ public final class Tool {
 		Log.e(TAG, Log.getStackTraceString(new Throwable()));
 	}
 	public static void myLog(String msg){
-		Log.w(TAG, msg);
+		XposedBridge.log(msg);
+		Log.i(TAG,msg);
 	}
 	public static void myException(Exception e){
 		Log.e(TAG, e.toString());
